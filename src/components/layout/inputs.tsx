@@ -70,7 +70,11 @@ export function Inputs(params: { country: Country; email: string }) {
               <TextInput id={key} type="text" required {...register(key)} />
             )}
             {typeName === 'ZodNumber' && (
-              <TextInput type="number" id={key} {...register(key)} />
+              <TextInput
+                type="number"
+                id={key}
+                {...register(key, { valueAsNumber: true })}
+              />
             )}
             {typeName === 'ZodBoolean' && (
               <Checkbox id={key} {...register(key)} />
